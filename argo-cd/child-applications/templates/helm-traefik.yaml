@@ -14,7 +14,7 @@ spec:
     helm:
       releaseName: argocd-helm-traefik
   destination:
-    server: {{ .Values.destination-server }}
+    server: {{ .Values.destinationServerUrl }}
     namespace: traefik
   syncPolicy:
     automated:
