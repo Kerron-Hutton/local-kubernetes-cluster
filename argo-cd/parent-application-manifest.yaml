@@ -13,6 +13,9 @@ spec:
     targetRevision: main # repository branch name
     helm:
       releaseName: argocd-child-applications
+      parameters:
+        - name: destination-server
+          value: https://kubernetes.default.svc
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
