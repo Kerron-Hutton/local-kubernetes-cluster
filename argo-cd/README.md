@@ -15,3 +15,9 @@ kubectl apply -n argocd -f ./installation-manifest.yaml
 ```
 
 This will create a new namespace, argocd, where Argo CD services and application resources will live.
+
+## Recommended Resources
+
+- [Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
+- [Declarative Setup](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/)
+- [Cluster Bootstrapping](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/)
