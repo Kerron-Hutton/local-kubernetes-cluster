@@ -16,6 +16,18 @@ kubectl apply -n argocd -f ./installation-manifest.yaml
 
 This will create a new namespace, argocd, where Argo CD services and application resources will live.
 
+## Configure App of Apps
+
+Argo Cd has a principle called app of apps. This allows us to declaratively manage a group of apps
+that can be deployed and configured in concert. Read more on the *Declarative Setup* link. The below
+command should be ran whenver argo cd is successfully installed.
+
+```bash
+kubectl apply -n argocd -f ./parent-application-manifest.yaml
+```
+
+The above command will install the parent argo cd application responsible for syncing all child applicaitions.
+
 ## Recommended Resources
 
 - [Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
