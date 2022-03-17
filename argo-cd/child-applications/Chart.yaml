@@ -1,0 +1,9 @@
+name: child-applications
+type: application
+apiVersion: v3
+
+appVersion: "0.1.0"
+version: 0.1.0
+
+description: |
+  A Helm chart for Argo CD child applications.
