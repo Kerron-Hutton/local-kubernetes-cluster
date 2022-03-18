@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-ingress-routes
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Kerron-Hutton/local-kubernetes-cluster
+    targetRevision: main # repository branch name
+    path: ingress-routes
+    helm:
+      releaseName: helm-ingress-routes
+      parameters:
+        - name: namespace
+          value: traefik
+        - name: hostname
+          value: 127.0.0.1.nip.io
+  destination:
+    server: {{ .Values.destinationServerUrl }}
+    namespace: traefik
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
