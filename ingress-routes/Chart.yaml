@@ -1,0 +1,10 @@
+name: ingress-routes
+type: application
+apiVersion: v2
+
+appVersion: ".1.0"
+version: 0.1.0
+
+description: |
+  A Helm chart that will store ingress routes
+  for mainly dashboard within the cluster.

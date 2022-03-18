@@ -1,0 +1,26 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  namespace: {{ .Values.namesapce }}
+  name: argocd-server-dashboard
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match:
+        Host({{ printf "`%s.%s`" "argocd" .Values.hostname }})
+      priority: 10
+      services:
+        - name: argocd-server
+          port: 80
+    - kind: Rule
+      match:
+        Host(`{{ printf "`%s.%s`" "argocd" .Values.hostname }}`) && Headers(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - name: argocd-server
+          port: 80
+          scheme: h2c
+  tls:
+    certResolver: default
