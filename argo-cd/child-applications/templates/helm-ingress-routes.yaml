@@ -18,7 +18,7 @@ spec:
           value: 127.0.0.1.nip.io
   destination:
     server: {{ .Values.destinationServerUrl }}
-    namespace: traefik
+    namespace: argocd
   syncPolicy:
     automated:
       selfHeal: true
