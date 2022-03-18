@@ -10236,7 +10236,7 @@ spec:
             weight: 5
       containers:
       - command:
-        - argocd-server
+        - argocd-server --insecure
         env:
         - name: ARGOCD_SERVER_INSECURE
           valueFrom:
