@@ -1,6 +1,6 @@
 name: child-applications
 type: application
-apiVersion: v3
+apiVersion: v2
 
 appVersion: "0.1.0"
 version: 0.1.0
